@@ -1,9 +1,9 @@
-﻿using BaseMobile.Services;
-using BaseMobile.Models;
+﻿using Flashlight.Services;
+using Flashlight.Models;
 using System.Collections.ObjectModel;
-using BaseMobile.Resources.Localization;
+using Flashlight.Resources.Localization;
 
-namespace BaseMobile.ViewModels;
+namespace Flashlight.ViewModels;
 public class SettingsViewModel : BaseViewModel
 {
 	public LocalizationManager LocalizationManager => LocalizationManager.Instance;

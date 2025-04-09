@@ -1,8 +1,8 @@
-﻿using BaseMobile.Resources.Localization;
+﻿using Flashlight.Resources.Localization;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace BaseMobile.Services;
+namespace Flashlight.Services;
 public class LocalizationManager : INotifyPropertyChanged
 {
 	private LocalizationManager()

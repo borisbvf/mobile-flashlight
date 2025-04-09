@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace BaseMobile
+namespace Flashlight
 {
     [Application]
     public class MainApplication : MauiApplication

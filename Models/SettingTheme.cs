@@ -1,4 +1,4 @@
-﻿namespace BaseMobile.Models;
+﻿namespace Flashlight.Models;
 public class SettingTheme
 {
 	public AppTheme AppTheme { get; }

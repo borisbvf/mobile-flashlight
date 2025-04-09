@@ -1,6 +1,6 @@
-using BaseMobile.ViewModels;
+using Flashlight.ViewModels;
 
-namespace BaseMobile.Views;
+namespace Flashlight.Views;
 
 public partial class SettingsPage : ContentPage
 {

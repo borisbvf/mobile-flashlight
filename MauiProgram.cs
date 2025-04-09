@@ -1,8 +1,8 @@
-﻿using BaseMobile.ViewModels;
-using BaseMobile.Views;
+﻿using Flashlight.ViewModels;
+using Flashlight.Views;
 using Microsoft.Extensions.Logging;
 
-namespace BaseMobile
+namespace Flashlight
 {
     public static class MauiProgram
     {

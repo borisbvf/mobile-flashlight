@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
-using BaseMobile.Services;
+using Flashlight.Services;
 
-namespace BaseMobile
+namespace Flashlight
 {
     public partial class MainPage : ContentPage
     {

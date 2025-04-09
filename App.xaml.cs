@@ -1,7 +1,7 @@
-﻿using BaseMobile.Services;
+﻿using Flashlight.Services;
 using System.ComponentModel;
 
-namespace BaseMobile
+namespace Flashlight
 {
     public partial class App : Application
     {

@@ -1,6 +1,6 @@
-﻿using BaseMobile.Views;
+﻿using Flashlight.Views;
 
-namespace BaseMobile
+namespace Flashlight
 {
     public partial class AppShell : Shell
     {
