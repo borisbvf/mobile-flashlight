@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
-using Flashlight.Services;
+using Torch.Services;
 
-namespace Flashlight
+namespace Torch
 {
     public partial class MainPage : ContentPage
     {

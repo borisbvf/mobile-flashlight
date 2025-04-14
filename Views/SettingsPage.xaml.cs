@@ -1,6 +1,6 @@
-using Flashlight.ViewModels;
+using Torch.ViewModels;
 
-namespace Flashlight.Views;
+namespace Torch.Views;
 
 public partial class SettingsPage : ContentPage
 {

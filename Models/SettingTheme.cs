@@ -1,4 +1,4 @@
-﻿namespace Flashlight.Models;
+﻿namespace Torch.Models;
 public class SettingTheme
 {
 	public AppTheme AppTheme { get; }

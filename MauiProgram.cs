@@ -1,8 +1,8 @@
-﻿using Flashlight.ViewModels;
-using Flashlight.Views;
+﻿using Torch.ViewModels;
+using Torch.Views;
 using Microsoft.Extensions.Logging;
 
-namespace Flashlight
+namespace Torch
 {
     public static class MauiProgram
     {

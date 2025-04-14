@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace Flashlight
+namespace Torch
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

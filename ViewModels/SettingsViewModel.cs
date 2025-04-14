@@ -1,9 +1,9 @@
-﻿using Flashlight.Services;
-using Flashlight.Models;
+﻿using Torch.Services;
+using Torch.Models;
 using System.Collections.ObjectModel;
-using Flashlight.Resources.Localization;
+using Torch.Resources.Localization;
 
-namespace Flashlight.ViewModels;
+namespace Torch.ViewModels;
 public class SettingsViewModel : BaseViewModel
 {
 	public LocalizationManager LocalizationManager => LocalizationManager.Instance;

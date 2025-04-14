@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Flashlight.Services;
+namespace Torch.Services;
 public class ThemeService : INotifyPropertyChanged
 {
 	public event PropertyChangedEventHandler? PropertyChanged;

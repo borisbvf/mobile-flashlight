@@ -1,8 +1,8 @@
-﻿using Flashlight.Resources.Localization;
+﻿using Torch.Resources.Localization;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace Flashlight.Services;
+namespace Torch.Services;
 public class LocalizationManager : INotifyPropertyChanged
 {
 	private LocalizationManager()

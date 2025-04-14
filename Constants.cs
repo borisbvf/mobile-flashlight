@@ -1,4 +1,4 @@
-﻿namespace Flashlight;
+﻿namespace Torch;
 public class Constants
 {
 	public const string AppThemeKey = "AppTheme";

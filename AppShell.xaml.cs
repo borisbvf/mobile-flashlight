@@ -1,6 +1,6 @@
-﻿using Flashlight.Views;
+﻿using Torch.Views;
 
-namespace Flashlight
+namespace Torch
 {
     public partial class AppShell : Shell
     {

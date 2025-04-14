@@ -1,7 +1,7 @@
-﻿using Flashlight.Services;
+﻿using Torch.Services;
 using System.ComponentModel;
 
-namespace Flashlight
+namespace Torch
 {
     public partial class App : Application
     {

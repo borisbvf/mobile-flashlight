@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Flashlight.ViewModels;
+namespace Torch.ViewModels;
 public class BaseViewModel
 {
 	private bool isBusy;

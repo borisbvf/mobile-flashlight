@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace Flashlight
+namespace Torch
 {
     public class Program
     {
