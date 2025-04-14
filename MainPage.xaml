@@ -10,21 +10,18 @@
 			Command="{Binding SettingsCommand}"/>
 	</ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+	<Grid
+		Padding="50,50">
 
-            <Label
-                Text="{Binding LocalizationManager[AppName],Mode=OneWay}"
-                Style="{StaticResource Headline}"/>
+		<ImageButton
+			Source="{Binding ImageSource}"
+			BackgroundColor="Transparent"
+			Aspect="AspectFit"	
+			HorizontalOptions="Fill"
+			VerticalOptions="Fill"
+			CornerRadius="150"
+			Command="{Binding TurnOnOffCommand}"/>
 
-            <Label
-                Text="{Binding LocalizationManager[MainPageHint],Mode=OneWay}"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+	</Grid>
 
 </ContentPage>

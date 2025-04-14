@@ -45,10 +45,14 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#A9E3ED" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#A9E3ED" ForegroundScale="0.4"/>
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#A9E3ED" BaseSize="128,64" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#A9E3ED" BaseSize="400,400" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\buttonon.svg" BaseSize="400,400" />
+		<MauiImage Include="Resources\Images\buttonoff.svg" BaseSize="400,400" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
