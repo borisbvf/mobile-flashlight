@@ -14,11 +14,14 @@
 		Padding="50,50">
 
 		<ImageButton
+			x:Name="OnOffButton"
 			Source="{Binding ImageSource}"
 			BackgroundColor="Transparent"
 			Aspect="AspectFit"	
-			HorizontalOptions="Fill"
-			VerticalOptions="Fill"
+			HorizontalOptions="Center"
+			VerticalOptions="Center"
+			WidthRequest="{Binding ButtonSide}"
+			HeightRequest="{Binding ButtonSide}"
 			CornerRadius="150"
 			Command="{Binding TurnOnOffCommand}"/>
 

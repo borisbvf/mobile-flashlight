@@ -13,6 +13,13 @@ namespace Torch
 
 		public LocalizationManager LocalizationManager => LocalizationManager.Instance;
 
+        public double ButtonSide
+        {
+            get => (DeviceDisplay.Current.MainDisplayInfo.Width < DeviceDisplay.Current.MainDisplayInfo.Height
+                ? DeviceDisplay.Current.MainDisplayInfo.Width
+                : DeviceDisplay.Current.MainDisplayInfo.Height) / DeviceDisplay.Current.MainDisplayInfo.Density * 2 / 3;
+		}
+
         private bool buttonOn = false;
 
         private string imageSource = "buttonoff.png";
