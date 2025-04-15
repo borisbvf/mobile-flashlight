@@ -61,7 +61,7 @@ namespace Torch.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mobile application.
+        ///   Looks up a localized string similar to Torch.
         /// </summary>
         internal static string AppName {
             get {
@@ -115,11 +115,20 @@ namespace Torch.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Changing the language and theme is available from the settings menu.
+        ///   Looks up a localized string similar to No permission to access flashlight..
         /// </summary>
-        internal static string MainPageHint {
+        internal static string MsgNoPermission {
             get {
-                return ResourceManager.GetString("MainPageHint", resourceCulture);
+                return ResourceManager.GetString("MsgNoPermission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flashlight is not supported on this device..
+        /// </summary>
+        internal static string MsgNotSupported {
+            get {
+                return ResourceManager.GetString("MsgNotSupported", resourceCulture);
             }
         }
         

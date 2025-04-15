@@ -38,15 +38,51 @@ namespace Torch
         public ICommand TurnOnOffCommand => new Command(TurnOnOff);
         private async void TurnOnOff()
         {
-            if (buttonOn)
+            bool isSupported = await Flashlight.Default.IsSupportedAsync();
+            if (isSupported)
             {
-                ImageSource = "buttonoff.png";
-            }
+                try
+                {
+                    if (!buttonOn)
+                    {
+                        await Flashlight.Default.TurnOnAsync();
+                    }
+                    else
+                    {
+                        await Flashlight.Default.TurnOffAsync();
+                    }
+					buttonOn = !buttonOn;
+				}
+                catch (FeatureNotSupportedException ex)
+                {
+                    await DisplayAlert(
+                        LocalizationManager["Error"].ToString(),
+                        $"{LocalizationManager["MsgNotSupported"].ToString()} {ex.Message}",
+						LocalizationManager["Ok"].ToString());
+                }
+                catch (PermissionException ex)
+                {
+                    await DisplayAlert(
+                        LocalizationManager["Error"].ToString(),
+                        $"{LocalizationManager["MsgNoPermission"].ToString()} {ex.Message}",
+						LocalizationManager["Ok"].ToString());
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert(
+                        LocalizationManager["Error"].ToString(),
+                        $"{ex.Message}",
+						LocalizationManager["Ok"].ToString());
+                }
+				ImageSource = buttonOn ? "buttonon.png" : "buttonoff.png";
+			}
             else
             {
-                ImageSource = "buttonon.png";
+                await DisplayAlert(
+                    LocalizationManager["Error"].ToString(), 
+                    LocalizationManager["MsgNotSupported"].ToString(),
+					LocalizationManager["Ok"].ToString());
             }
-            buttonOn = !buttonOn;
         }
 	}
 

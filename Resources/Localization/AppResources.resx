@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppName" xml:space="preserve">
-    <value>Mobile application</value>
+    <value>Torch</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -135,8 +135,11 @@
   <data name="LightTheme" xml:space="preserve">
     <value>Light</value>
   </data>
-  <data name="MainPageHint" xml:space="preserve">
-    <value>Changing the language and theme is available from the settings menu</value>
+  <data name="MsgNoPermission" xml:space="preserve">
+    <value>No permission to access flashlight.</value>
+  </data>
+  <data name="MsgNotSupported" xml:space="preserve">
+    <value>Flashlight is not supported on this device.</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
