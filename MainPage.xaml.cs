@@ -53,10 +53,12 @@ namespace Torch
                     if (!buttonOn)
                     {
                         await Flashlight.Default.TurnOnAsync();
+                        HapticFeedback.Default.Perform(HapticFeedbackType.LongPress);
                     }
                     else
                     {
                         await Flashlight.Default.TurnOffAsync();
+                        HapticFeedback.Default.Perform(HapticFeedbackType.Click);
                     }
 					buttonOn = !buttonOn;
 				}

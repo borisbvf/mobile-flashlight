@@ -2,6 +2,7 @@
 using Android.Runtime;
 [assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
 [assembly: UsesPermission(Android.Manifest.Permission.Camera)]
+[assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
 
 namespace Torch
 {
