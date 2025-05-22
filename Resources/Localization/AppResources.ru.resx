@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ActivateOnStart" xml:space="preserve">
-    <value>Активировать при запуске</value>
+    <value>Авто активация и деактивация при запуске и остановке приложения</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Фонарик</value>

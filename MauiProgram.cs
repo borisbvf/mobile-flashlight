@@ -24,7 +24,7 @@ namespace Torch
             builder.Services.AddSingleton<TorchService>();
             builder.Services.AddTransient<SettingsViewModel>();
             builder.Services.AddTransient<SettingsPage>();
-            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddSingleton<MainPage>();
             return builder.Build();
         }
     }

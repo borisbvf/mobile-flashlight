@@ -54,11 +54,11 @@
 			</Grid>
 		</Frame>
 		<Frame
-			HeightRequest="70"
+			HeightRequest="100"
 			Margin="2"
 			Padding="2">
 			<Grid
-				ColumnDefinitions="2*,*"
+				ColumnDefinitions="3*,*"
 				Margin="5"
 				Padding="5">
 				<Label

@@ -37,15 +37,32 @@ namespace Torch
                 SetAppTheme();
             }
         }
-
-		protected override Window CreateWindow(IActivationState? activationState)
-		{
+        private bool isActivatedEventHandlerAdded;
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
             Window window = base.CreateWindow(activationState);
-            window.Activated += async (s, e) =>
+
+            if (!isActivatedEventHandlerAdded)
             {
-                if (Preferences.Default.Get(Constants.StartActivation, false))
-                    await _torchService.TurnOnOff();
-            };
+				window.Activated += async (s, e) =>
+				{
+					if (Preferences.Default.Get(Constants.StartActivation, false))
+
+						await _torchService.TurnOnOff();
+				};
+				window.Deactivated += async (s, e) =>
+				{
+					if (Preferences.Default.Get(Constants.StartActivation, false))
+					{
+						if (_torchService.TorchIsOn)
+						{
+							await _torchService.TurnOnOff();
+						}
+					}
+				};
+                isActivatedEventHandlerAdded = true;
+			}
+
             return window;
 		}
     }
