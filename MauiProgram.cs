@@ -1,5 +1,6 @@
 ﻿using Torch.ViewModels;
 using Torch.Views;
+using Torch.Services;
 using Microsoft.Extensions.Logging;
 
 namespace Torch
@@ -20,8 +21,10 @@ namespace Torch
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<TorchService>();
             builder.Services.AddTransient<SettingsViewModel>();
             builder.Services.AddTransient<SettingsPage>();
+            builder.Services.AddTransient<MainPage>();
             return builder.Build();
         }
     }

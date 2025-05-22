@@ -5,11 +5,18 @@ namespace Torch
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        TorchService _torchService;
+        public MainPage(TorchService torchService)
         {
             InitializeComponent();
+            _torchService = torchService;
             BindingContext = this;
-        }
+			ImageSource = _torchService.TorchIsOn ? "buttonon.png" : "buttonoff.png";
+            _torchService.OnSwitchingTorch += (s, e) =>
+            {
+				ImageSource = _torchService.TorchIsOn ? "buttonon.png" : "buttonoff.png";
+			};
+		}
 
 		public LocalizationManager LocalizationManager => LocalizationManager.Instance;
 
@@ -19,8 +26,6 @@ namespace Torch
                 ? DeviceDisplay.Current.MainDisplayInfo.Width
                 : DeviceDisplay.Current.MainDisplayInfo.Height) / DeviceDisplay.Current.MainDisplayInfo.Density * 2 / 3;
 		}
-
-        private bool buttonOn = false;
 
         private string imageSource = "buttonoff.png";
         public string ImageSource
@@ -45,54 +50,16 @@ namespace Torch
         public ICommand TurnOnOffCommand => new Command(TurnOnOff);
         private async void TurnOnOff()
         {
-            bool isSupported = await Flashlight.Default.IsSupportedAsync();
-            if (isSupported)
+            (bool isSuccess, string? errorMessage) = await _torchService.TurnOnOff();
+            if (!isSuccess)
             {
-                try
-                {
-                    if (!buttonOn)
-                    {
-                        await Flashlight.Default.TurnOnAsync();
-                        HapticFeedback.Default.Perform(HapticFeedbackType.LongPress);
-                    }
-                    else
-                    {
-                        await Flashlight.Default.TurnOffAsync();
-                        HapticFeedback.Default.Perform(HapticFeedbackType.Click);
-                    }
-					buttonOn = !buttonOn;
-				}
-                catch (FeatureNotSupportedException ex)
-                {
-                    await DisplayAlert(
-                        LocalizationManager["Error"].ToString(),
-                        $"{LocalizationManager["MsgNotSupported"].ToString()} {ex.Message}",
-						LocalizationManager["Ok"].ToString());
-                }
-                catch (PermissionException ex)
-                {
-                    await DisplayAlert(
-                        LocalizationManager["Error"].ToString(),
-                        $"{LocalizationManager["MsgNoPermission"].ToString()} {ex.Message}",
-						LocalizationManager["Ok"].ToString());
-                }
-                catch (Exception ex)
-                {
-                    await DisplayAlert(
-                        LocalizationManager["Error"].ToString(),
-                        $"{ex.Message}",
-						LocalizationManager["Ok"].ToString());
-                }
-				ImageSource = buttonOn ? "buttonon.png" : "buttonoff.png";
+				await DisplayAlert(
+					$"{LocalizationManager["Error"]}",
+					$"{errorMessage}",
+					$"{LocalizationManager["Ok"]}");
 			}
-            else
-            {
-                await DisplayAlert(
-                    LocalizationManager["Error"].ToString(), 
-                    LocalizationManager["MsgNotSupported"].ToString(),
-					LocalizationManager["Ok"].ToString());
-            }
-        }
+			ImageSource = _torchService.TorchIsOn ? "buttonon.png" : "buttonoff.png";
+		}
 	}
 
 }

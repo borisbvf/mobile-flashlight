@@ -61,6 +61,15 @@ namespace Torch.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activate on start.
+        /// </summary>
+        internal static string ActivateOnStart {
+            get {
+                return ResourceManager.GetString("ActivateOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Torch.
         /// </summary>
         internal static string AppName {

@@ -53,5 +53,25 @@
 					SelectedItem="{Binding SelectedLanguage}"/>
 			</Grid>
 		</Frame>
-    </VerticalStackLayout>
+		<Frame
+			HeightRequest="70"
+			Margin="2"
+			Padding="2">
+			<Grid
+				ColumnDefinitions="2*,*"
+				Margin="5"
+				Padding="5">
+				<Label
+					VerticalOptions="Center"
+					HorizontalOptions="Start"
+					FontSize="Medium"
+					Text="{Binding LocalizationManager[ActivateOnStart]}"/>
+				<Switch
+					Grid.Column="1"
+					VerticalOptions="Center"
+					HorizontalOptions="End"
+					IsToggled="{Binding IsStartActivation}"/>
+			</Grid>
+		</Frame>
+	</VerticalStackLayout>
 </ContentPage>

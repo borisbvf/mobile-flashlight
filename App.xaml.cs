@@ -5,9 +5,12 @@ namespace Torch
 {
     public partial class App : Application
     {
-        public App()
+        TorchService _torchService;
+        public App(TorchService torchService)
         {
             InitializeComponent();
+
+            _torchService = torchService;
 
             MainPage = new AppShell();
 
@@ -34,5 +37,16 @@ namespace Torch
                 SetAppTheme();
             }
         }
+
+		protected override Window CreateWindow(IActivationState? activationState)
+		{
+            Window window = base.CreateWindow(activationState);
+            window.Activated += async (s, e) =>
+            {
+                if (Preferences.Default.Get(Constants.StartActivation, false))
+                    await _torchService.TurnOnOff();
+            };
+            return window;
+		}
     }
 }

@@ -9,8 +9,9 @@ public class SettingsViewModel : BaseViewModel
 	public LocalizationManager LocalizationManager => LocalizationManager.Instance;
 
 	public ObservableCollection<SettingTheme> Themes { get; set; }
-	public SettingTheme selectedTheme;
-	public SettingTheme SelectedTheme
+
+	public SettingTheme? selectedTheme;
+	public SettingTheme? SelectedTheme
 	{
 		get => selectedTheme;
 		set
@@ -49,6 +50,19 @@ public class SettingsViewModel : BaseViewModel
 
 				// Update manually app theme names, because it will not happen automatically
 				RefillThemes();
+			}
+		}
+	}
+
+	public bool IsStartActivation
+	{
+		get => Preferences.Default.Get(Constants.StartActivation, false);
+		set
+		{
+			if (value != IsStartActivation)
+			{
+				Preferences.Default.Set(Constants.StartActivation, value);
+				OnPropertyChanged();
 			}
 		}
 	}
