@@ -24,7 +24,7 @@
 		<ApplicationTitle>Torch</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.torch</ApplicationId>
+		<ApplicationId>com.jeekstudio.torch</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
