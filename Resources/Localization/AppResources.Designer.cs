@@ -61,7 +61,7 @@ namespace Torch.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto activation and deactivation on start and stop of the app..
+        ///   Looks up a localized string similar to Automatic activation and deactivation on start and stop of the app.
         /// </summary>
         internal static string ActivateOnStart {
             get {
